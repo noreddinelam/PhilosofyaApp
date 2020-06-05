@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:philosofya/philo_app.dart';
 
 void main() {
-  runApp(FirstScreen());
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(new FirstScreen());
+  });
 }
 
 class FirstScreen extends StatelessWidget {
