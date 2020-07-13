@@ -4,21 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-const kGradient = LinearGradient(
-  colors: [
-    Color(0xff21BBBE),
-    Color(0xff115E5F),
-  ],
-  begin: Alignment.topCenter,
-  end: Alignment.bottomCenter,
-);
-const kTextStyle = TextStyle(
-  color: Colors.white,
-  fontSize: 29.0,
-  fontWeight: FontWeight.bold,
-  fontFamily: 'Rockwell',
-  height: 1.5,
-);
+import '../constant.dart';
 
 class PhiloApp extends StatefulWidget {
   @override
@@ -157,39 +143,42 @@ class _State extends State<PhiloApp> {
                 ),
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Expanded(
-                          flex: 12,
-                          child: Container(
-                            alignment: Alignment.topLeft,
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Expanded(
+                            flex: 11,
+                            child: Container(
+                              alignment: Alignment.topLeft,
+                              child: Icon(
+                                Icons.subject,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 1,
                             child: Icon(
-                              Icons.subject,
+                              FontAwesomeIcons.facebookSquare,
                               color: Colors.white,
                             ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            FontAwesomeIcons.facebookSquare,
-                            color: Colors.white,
+                          Expanded(
+                            flex: 1,
+                            child: Icon(
+                              FontAwesomeIcons.instagram,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: Icon(
-                            FontAwesomeIcons.instagram,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     Padding(
                       padding: EdgeInsets.only(
                           bottom: screenHeight * 0.02,
-                          top: screenHeight * 0.02),
+                          top: screenHeight * 0.005),
                       child: Text(
                         'PHILOSOPHYA',
                         style: TextStyle(
